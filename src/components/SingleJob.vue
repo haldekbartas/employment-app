@@ -1,8 +1,10 @@
 <template>
    <div @click="offerClick" class="single-job-offer">
+    
      <div class="offer-header">
          <h2>{{title}}</h2>
      </div>
+     
      <div class="offer-content">
         <div class="offer-content-left">
             <h3 class="company">{{company}}</h3>
@@ -27,6 +29,7 @@
             </div>
         </transition>
      </div>
+     
    </div>
 </template>
 <script>
@@ -43,21 +46,14 @@
             contact: String,
             tagsArray: Array,
         },
-        data() {
-            return {
-
-            }
-        },
         methods: {
             offerClick(event) {
                 this.$emit('clicked', this.id);
             }
         }
     }
-
 </script>
 <style scoped lang="scss">
-
     .fadeHeight-enter-active {
         transition: all 0.3s;
         max-height: 250px;
@@ -75,26 +71,6 @@
         max-height: 0px;
     }
 
-
-
-
-    /*
-    .buttonFade-leave-active{
-        transition: all 1s;
-           max-height: 0;
-    }
-     .buttonFade-enter-active{
-                transition: all 1s 2s;
-      max-height: 0;
-    }
-
-    .buttonFade-enter,
-    .buttonFade-leave-to {
-             opacity: 0;
-        max-height: 70px;
-    }
-*/
-
     .single-job-offer {
         width: 90%;
         background-color: #20A39E;
@@ -104,10 +80,8 @@
         flex-direction: column;
         box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-
         &:hover {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.3);
-
         }
         @media (min-width: 768px) {
             width: 80%;
@@ -118,8 +92,6 @@
         @media (min-width: 1440px) {
             width: 35%;
         }
-
-
         .offer-header {
             height: auto;
             background-color: #25bcb6;
@@ -130,7 +102,6 @@
                 @media (max-width: 425px) {
                     font-size: 36px;
                 }
-
             }
         }
         .offer-content {
@@ -139,7 +110,6 @@
             .offer-content-left {
                 display: flex;
                 flex-direction: column;
-
                 align-items: flex-start;
                 h3 {
                     font-size: 24px;
@@ -197,9 +167,7 @@
             font-size: 20px;
             font-weight: 600;
             padding: 25px 0;
-            /*            margin-top: 25px;*/
             border-top: 2px solid #008b86;
-
             width: 100%;
             color: #008b86;
             cursor: pointer;
@@ -238,5 +206,4 @@
             }
         }
     }
-
 </style>

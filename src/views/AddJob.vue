@@ -1,5 +1,6 @@
 <template>
    <div  class="add-job">
+       
         <div v-if="!submitted" class="jobCard">
                      <h2 class="add-job-header">Post a job</h2>
          <form @submit.prevent="setSelectedTags();validateBeforeSubmit()">
@@ -85,7 +86,6 @@
             
          </form>
                      <div class="button-row">   
-               
                <button class="ripple" @click="validateBeforeSubmit();setSelectedTags()"  :disabled="errors.any()">Send the offer</button> 
                  <button class="ripple" id="show-modal" @click="validateBeforePreview();setSelectedTags()">Show Preview</button>
             </div>
@@ -98,8 +98,6 @@
             </div>
          
          <div class="modal-section">
-                   
-                      <!-- use the modal component, pass in the prop -->
   <modal v-if="showModal" @close="showModal = false">
     <div slot="header" class="offer-header">
             <h2>{{jobOffer.title}}</h2>
@@ -118,15 +116,10 @@
            <h3>Job type: {{jobOffer.type}}</h3>
            <h3><a :href="`mailto:${jobOffer.contact}`">{{jobOffer.contact}}</a></h3>
       </div>
-      
         </div>
    </div>
-   
-
   </modal>
-  
          </div>
-
    </div>
 </template>
 
@@ -174,7 +167,6 @@
 
                     }
                 });
-
             },
             validateBeforePreview() {
                 this.$validator.validateAll().then((result) => {
@@ -186,7 +178,6 @@
             }
         }
     }
-
 </script>
 <style lang="scss" scoped>
     @import '../assets/styles/veoro-tags.css';
@@ -199,13 +190,11 @@
         height: auto;
         background-color: #BADFF3;
         width: 100%;
-       
         padding-bottom: 20px;
         .add-job-header {
             font-size: 30px;
             margin: 0 0 30px;
             padding-top: 2%;
-           
             @media (max-width: 768px) {
                 padding-top: 90px;
             }
@@ -243,11 +232,9 @@
                 }
                 @media (max-width: 425px) {
                     width: 90%;
-                        margin-bottom:50px;
+                    margin-bottom: 50px;
                 }
-                span{
-                   
-                }
+                span {}
                 label {
                     position: absolute;
                     top: -25px;
@@ -274,7 +261,6 @@
                     @media (max-width: 425px) {
                         width: 90%;
                     }
-
                     textarea {
                         resize: vertical;
                         width: 100%;
@@ -295,7 +281,6 @@
         }
     }
 
-    
     button {
         border: none;
         border-radius: 4px;
@@ -310,15 +295,14 @@
         box-shadow: 0 0 4px #999;
         outline: none;
         @media (max-width: 768px) {
-            margin:  0 auto 20px  ;
+            margin: 0 auto 20px;
             display: block;
         }
-                @media (min-width: 768px) {
-            margin:  25px auto;
+        @media (min-width: 768px) {
+            margin: 25px auto;
         }
-                    @media (min-width: 1024px) {
-            margin:  10px 25px 0;
-           
+        @media (min-width: 1024px) {
+            margin: 10px 25px 0;
         }
         &.ripple {
             background-position: center;
@@ -333,5 +317,4 @@
             transition: background 0s;
         }
     }
-
 </style>

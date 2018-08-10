@@ -2,6 +2,7 @@
   <div class="home">
   
   <Hero />
+  
   <div class="job-list">
        <div class="input-block">
            <input type="text" v-model="search" placeholder="Search for a job"  />
@@ -20,10 +21,7 @@
       v-bind:description="job.description"
       v-bind:tagsArray="job.tagsArray"
       />
-      
   </div>
-
-      
   </div>
 </template>
 
@@ -60,57 +58,47 @@
                     this.jobs = jobsArray;
                 });
         },
-        computed:{
-            filteredJobs: function(){
-                return this.jobs.filter((job) =>{
+        computed: {
+            filteredJobs: function() {
+                return this.jobs.filter((job) => {
                     return job.title.toLowerCase().match(this.search);
                 });
             }
         }
     }
-
 </script>
 
 <style lang="scss" scoped>
-    
-    .job-list{
+    .job-list {
         min-height: 50vh;
     }
-    
     .input-block {
-                margin: 25px auto;
-                height: 50px;
-                width: 90%;
-                position: relative;
-                border-bottom:1px solid black;
-        @media (max-width:425px){
+        margin: 25px auto;
+        height: 50px;
+        width: 90%;
+        position: relative;
+        border-bottom: 1px solid black;
+        @media (max-width: 425px) {
             width: 80%;
         }
-       @media (max-width:768px){
+        @media (min-width:425px) and (max-width:768px) {
             width: 60%;
         }
-        @media (max-width:1024px){
+        @media (min-width:768px) and(max-width:1024px) {
             width: 35%;
         }
-          @media (min-width:1440px){
+        @media (min-width:1024px) {
             width: 30%;
         }
-       
-
+        input {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 0;
+            padding-left: 15px;
+            font-size: 20px;
+            height: 50px;
+            outline: none;
+        }
     }
-    
-     input {
-         
-                    width: 100%;
-                    height: 100%;
-                    box-sizing: border-box;
-                    border: 0;
-                    padding-left: 15px;
-                    font-size: 20px;
-                    height: 50px;
-                    outline: none;
-                }
-
-              
-
 </style>
