@@ -1,21 +1,20 @@
-# working
+# Employment app 
 
-## Project setup
+Vue.js application that allows you to publish and view job offers. <br />
+author: haldekbartas
+
+## Online preview
+
+live: https://bit.ly/2vyxSe4
+
+## Locally preview
+
+1. Go to repository folder and install packages.
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+2. Run server locally.
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+3. Open browser and go to: http://localhost:8080 .
